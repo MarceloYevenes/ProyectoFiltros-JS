@@ -8,6 +8,9 @@ const areaBuscadora = document.querySelector("#buscador");
 const selectProfesion = document.querySelector(".select-profesion");
 const selectCiudad = document.querySelector(".select-ciudad");
 
+//Seleccion para mensaje de error
+const mensaje = document.querySelector('.mensaje');
+
 //Objeto para establecer datos de busqueda
 const datosBusqueda = {
     ciudad:'',
@@ -74,6 +77,16 @@ function clickearVerMas(e,id){
 function mostrarTabla(personas) {
   //Evitar repeticion de informacion  
   limpiarTabla();
+ 
+  if(personas.length===0){
+    const mensajeError = document.createElement('p');
+    mensajeError.innerHTML="No hay elementos que coincidan con la búsqueda";
+    mensaje.appendChild(mensajeError);
+  }else{
+    limpiarMensajeError();
+  }
+     
+
   //Iterar sobre el array de objetos y mostrarlo en una tabla
   personas.forEach((element) => {
     
@@ -146,6 +159,12 @@ function filtrarCiudad(persona){
         return persona.ciudad === datosBusqueda.ciudad
     }else{
         return persona
+    }
+}
+
+function limpiarMensajeError(){
+    while(mensaje.firstChild){
+        mensaje.removeChild(mensaje.firstChild);
     }
 }
 
