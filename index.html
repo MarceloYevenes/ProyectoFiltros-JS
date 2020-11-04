@@ -1,61 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Filtros</title>
-  </head>
-  <body class="container">
-    <h1>Proyecto de filtros</h1>
 
-    <!-- Filtros con select -->
-    <div class="filtros">
-      <h2>Filtros</h2>
-      <label>Profesión</label> 
-      <select class="select-profesion">
-        <option value="">Seleccione una opción</option>
-        <option value="Arquitecto">Arquitecto</option>
-        <option value="Profesor">Profesor</option>
-        <option value="Ingeniero">Ingeniero</option>
-      </select>
-      <label>Ciudad</label> 
-      <select class="select-ciudad">
-        <option value="">Seleccione una opción</option>
-        <option value="Concepcion">Concepcion</option>
-        <option value="Talcahuano">Talcahuano</option>
-      </select>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+  <title>Filtros</title>
+</head>
+
+<body class="container">
+  <h1>Proyecto de filtros</h1>
+
+  <!-- Filtros con select -->
+  <div class="filtros">
+    <h2>Filtros</h2>
+    <div class="row">
+      <div class="col-lg-6 col-12">
+        <label>Profesión</label>
+        <select class="select-profesion form-control">
+          <option value="">Seleccione una opción</option>
+          <option value="Arquitecto">Arquitecto</option>
+          <option value="Profesor">Profesor</option>
+          <option value="Ingeniero">Ingeniero</option>
+        </select>
+      </div>
+      <div class="col-lg-6 col-12">
+        <label>Ciudad</label>
+        <select class="select-ciudad form-control">
+          <option value="">Seleccione una opción</option>
+          <option value="Concepcion">Concepcion</option>
+          <option value="Talcahuano">Talcahuano</option>
+        </select>
+      </div>
+
     </div>
+  </div>
 
-    <h2>Buscador</h2>
-    <input type="text" placeholder="Buscar por nombre" id="buscador" />
+  <br>
 
+  <h2>Tabla Elementos</h2>
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <button class="buttonLimpiar btn btn-secondary">Limpiar tabla</button>
+      <button class="buttonTodo btn btn-success">
+        Mostrar toda la tabla
+      </button>
+    </div>
+    <br><br>
+    <div class="col-12 col-md-4">
+      <input type="text" class="form-control" placeholder="Buscar por nombre" id="buscador" />
+    </div>
+  </div>
+  <br>
+  <table border="1px" class="Tabla-principal table table-hover table-responsive-sm">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Profesión</th>
+        <th>Ciudad</th>
+        <th>Ver más</th>
+      </tr>
+    </thead>
+    <tbody class="contenido"></tbody>
+  </table>
 
-    <h2>Tabla Elementos</h2>
-    <button class="buttonLimpiar">Limpiar tabla</button>
-    <button class="buttonTodo">Mostrar toda la tabla</button>
+  <script src="js/bd.js"></script>
+  <script src="js/app.js"></script>
+</body>
 
-    <table border="1px" class="Tabla-principal table table-hover">
-      <thead class="thead-dark">
-        <tr>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Teléfono</th>
-          <th>Profesión</th>
-          <th>Ciudad</th>
-          <th>Ver más</th>
-        </tr>
-      </thead>
-      <tbody class="contenido"></tbody>
-    </table>
-
-    <script src="js/bd.js"></script>
-    <script src="js/app.js"></script>
-  </body>
 </html>
