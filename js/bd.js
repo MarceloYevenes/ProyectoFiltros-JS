@@ -1,4 +1,4 @@
-
+//Los datos de esta seccion deben ser solitados a alguna API
 const personas = [
     {
         id:'1',
