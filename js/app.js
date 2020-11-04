@@ -4,6 +4,16 @@ const buttonMostrarTodo = document.querySelector(".buttonTodo");
 const buttonLimpiarTabla = document.querySelector(".buttonLimpiar");
 const areaBuscadora = document.querySelector("#buscador");
 
+//Selectores para los filtros
+const selectProfesion = document.querySelector(".select-profesion");
+const selectCiudad = document.querySelector(".select-ciudad");
+
+//Objeto para establecer datos de busqueda
+const datosBusqueda = {
+    ciudad:'',
+    profesion:''
+}
+
 
 //---Eventos---
 
@@ -37,6 +47,17 @@ areaBuscadora.addEventListener('input',(e)=>{
     }
 });
 
+//Se agregan a un objeto para establecer todos los filtros
+selectProfesion.addEventListener('change',(e)=>{
+    datosBusqueda.profesion=e.target.value;
+    filtrarPersonas();
+});
+
+//Se agregan a un objeto para establecer todos los filtros
+selectCiudad.addEventListener('change',(e)=>{
+    datosBusqueda.ciudad=e.target.value;
+    filtrarPersonas();
+});
 
 //---Funciones---
 
@@ -104,5 +125,28 @@ function mostrarTabla(personas) {
   });
 }
 
+//Funcion con filter anidados que llamana a una funcion cada filter
+function filtrarPersonas(){
+    const resultado = personas.filter(filtrarProfesion).filter(filtrarCiudad);
+    mostrarTabla(resultado);
+}
+
+//Se recibe el dato persona y se pregunta si coincide con el criterio
+function filtrarProfesion(persona){
+    if(datosBusqueda.profesion){
+        return persona.profesion === datosBusqueda.profesion
+    }else{
+        return persona
+    }
+}
+
+//Se recibe el dato persona y se pregunta si coincide con el criterio
+function filtrarCiudad(persona){
+    if(datosBusqueda.ciudad){
+        return persona.ciudad === datosBusqueda.ciudad
+    }else{
+        return persona
+    }
+}
 
 
