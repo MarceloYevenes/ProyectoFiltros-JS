@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Filtros</title>
+  </head>
+  <body class="container">
+    <h1>Proyecto de filtros</h1>
+
+    <!-- Filtros con select -->
+    <div class="filtros">
+      <h2>Filtros</h2>
+      <label>Profesión</label> 
+      <select>
+        <option value="">Seleccione una opción</option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+      </select>
+      <label>Ciudad</label> 
+      <select>
+        <option value="">Seleccione una opción</option>
+        <option value=""></option>
+        <option value=""></option>
+      </select>
+    </div>
+
+    <h2>Buscador</h2>
+    <input type="text" placeholder="Buscar por nombre" id="buscador" />
+
+
+    <h2>Tabla Elementos</h2>
+    <button class="buttonLimpiar">Limpiar tabla</button>
+    <button class="buttonTodo">Mostrar toda la tabla</button>
+
+    <table border="1px" class="Tabla-principal table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Teléfono</th>
+          <th>Profesión</th>
+          <th>Ciudad</th>
+          <th>Ver más</th>
+        </tr>
+      </thead>
+      <tbody class="contenido"></tbody>
+    </table>
+
+    <script src="js/bd.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
